@@ -4,8 +4,7 @@ import AgentList from "./components/AgentList";
 function App() {
   return (
     <>
-      <div>
-        <h1>Hola, mundo!</h1>
+      <div className="font-tungsten text-2xl uppercase">
         <AgentList />
       </div>
     </>
