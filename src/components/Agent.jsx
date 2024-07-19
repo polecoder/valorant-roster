@@ -1,3 +1,5 @@
+import { transformImage } from "../utils/transformImage";
+
 /**
  * @typedef {Object} AgentType
  * @property {Array} abilities
@@ -24,12 +26,23 @@
  */
 
 function Agent({ agent }) {
-  console.log(agent);
+  const croppedImage = transformImage(
+    "c_fill,w_280,ar_0.55/c_crop,w_280,h_560,x_10,y_50",
+    agent.fullPortrait,
+  );
 
   return (
-    <div>
-      <h2>{agent.displayName}</h2>
-      <img src={agent.fullPortrait} alt={agent.displayName} />
+    <div className="relative mx-auto w-fit">
+      <h2
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 -translate-y-1/2 px-7 py-3 text-4xl text-white"
+        style={{
+          backgroundImage:
+            "url('https://s2.svgbox.net/pen-brushes.svg?ic=brush-4&color=000')",
+        }}
+      >
+        {agent.displayName}
+      </h2>
+      <img src={croppedImage} alt={agent.displayName} />
     </div>
   );
 }
