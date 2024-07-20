@@ -11,7 +11,6 @@ function AgentList() {
       .then((response) => response.json())
       .then((data) => {
         const agentsRawData = data.data;
-        console.log(agentsRawData);
 
         const agentsArray = [];
         agentsRawData.forEach((agent) => {
@@ -48,14 +47,19 @@ function AgentList() {
           });
         });
         setAgents(agentsArray);
-        console.log(agents);
       });
   }, []);
 
   return (
     <div>
       <h1>AgentList</h1>
-      {agents.length > 0 ? <Agent agent={agents[0]} /> : <p>Loading...</p>}
+      <div className="flex flex-col gap-y-24">
+        {agents.length > 0 ? (
+          agents.map((agent) => <Agent key={agent.uuid} agent={agent} />)
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
     </div>
   );
 }

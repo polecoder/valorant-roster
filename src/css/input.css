@@ -10,3 +10,11 @@
     url("../../fonts/tungsten/tungsten.woff") format("woff"),
     url("../../fonts/tungsten/tungsten.ttf") format("truetype");
 }
+
+.hover-area {
+  @apply z-50 cursor-pointer;
+}
+
+.hover-area:hover + .hover-image {
+  @apply scale-125;
+}
