@@ -574,6 +574,10 @@ video {
   top: 50%;
 }
 
+.-bottom-4 {
+  bottom: -1rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -637,14 +641,9 @@ video {
   row-gap: 6rem;
 }
 
-.bg-red-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
-}
-
-.px-7 {
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .py-3 {
@@ -652,18 +651,20 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+.pb-\[12px\] {
+  padding-bottom: 12px;
 }
 
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.pt-\[11px\] {
+  padding-top: 11px;
 }
 
 .font-tungsten {
   font-family: Tungsten, sans-serif;
+}
+
+.font-marker {
+  font-family: Permanent Marker, cursive;
 }
 
 .text-2xl {
@@ -671,9 +672,9 @@ video {
   line-height: 2rem;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .uppercase {
@@ -711,8 +712,14 @@ video {
   cursor: pointer;
 }
 
-.hover-area:hover + .hover-image {
+.hover-area:hover ~ .hover-image {
   --tw-scale-x: 1.25;
   --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover-area:hover ~ .hover-text {
+  --tw-scale-x: 85%;
+  --tw-scale-y: 85%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }

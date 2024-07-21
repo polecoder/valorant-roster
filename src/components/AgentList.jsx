@@ -11,6 +11,7 @@ function AgentList() {
       .then((response) => response.json())
       .then((data) => {
         const agentsRawData = data.data;
+        console.log(agentsRawData);
 
         const agentsArray = [];
         agentsRawData.forEach((agent) => {

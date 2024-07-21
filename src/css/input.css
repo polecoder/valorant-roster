@@ -15,6 +15,10 @@
   @apply z-50 cursor-pointer;
 }
 
-.hover-area:hover + .hover-image {
+.hover-area:hover ~ .hover-image {
   @apply scale-125;
+}
+
+.hover-area:hover ~ .hover-text {
+  @apply scale-[85%];
 }

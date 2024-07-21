@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         tungsten: ["Tungsten", "sans-serif"],
+        marker: ["Permanent Marker", "cursive"],
       },
     },
   },
