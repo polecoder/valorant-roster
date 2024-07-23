@@ -53,7 +53,7 @@ function AgentList() {
 
   return (
     <div>
-      <h1>AgentList</h1>
+      <h2 className="mb-8 text-center">AgentList</h2>
       <div className="flex flex-col gap-y-24">
         {agents.length > 0 ? (
           agents.map((agent) => <Agent key={agent.uuid} agent={agent} />)

@@ -4,7 +4,7 @@ import AgentList from "./components/AgentList";
 function App() {
   return (
     <>
-      <div className="font-tungsten text-2xl uppercase">
+      <div className="bg-light font-tungsten uppercase">
         <AgentList />
       </div>
     </>
