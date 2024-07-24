@@ -5,11 +5,11 @@ export default {
     extend: {
       fontFamily: {
         tungsten: ["Tungsten", "sans-serif"],
-        marker: ["Permanent Marker", "cursive"],
+        lato: ["Lato", "sans-serif"],
       },
       colors: {
-        light: "#DDD",
-        dark: "#333",
+        light: "#EEE",
+        dark: "#111",
         "primary-blue": "#0F1923",
         "primary-red": "#FF4654",
       },

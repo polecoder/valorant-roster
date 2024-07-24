@@ -22,3 +22,11 @@
 .hover-area:hover ~ .hover-text {
   @apply scale-[85%];
 }
+
+.bg-radial {
+  @apply relative before:absolute before:bottom-[-10%] before:left-[-15%] before:top-[-5%] before:z-[1] before:w-[125%] before:bg-primary-red;
+}
+
+.bg-radial::before {
+  mask-image: radial-gradient(ellipse, rgba(0, 0, 0, 0.45), transparent 60%);
+}

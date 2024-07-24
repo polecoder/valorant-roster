@@ -52,15 +52,8 @@ function AgentList() {
   }, []);
 
   return (
-    <div>
-      <div className="mb-8 p-4">
-        <h2 className="mb-8 text-center">AgentList</h2>
-        <p>
-          Discover the unique and dynamic agents of Valorant, each equipped with
-          distinct abilities and playstyles. Explore their backgrounds, special
-          skills, and roles to gain a competitive edge in your next match.
-        </p>
-      </div>
+    <>
+      <h2 className="my-4 text-center text-5xl uppercase">Agents</h2>
       <div className="flex h-fit flex-col gap-y-24 overflow-x-hidden pb-16">
         {agents.length > 0 ? (
           agents.map((agent) => <Agent key={agent.uuid} agent={agent} />)
@@ -68,7 +61,7 @@ function AgentList() {
           <p>Loading...</p>
         )}
       </div>
-    </div>
+    </>
   );
 }
 
