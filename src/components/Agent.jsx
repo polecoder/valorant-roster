@@ -1,4 +1,5 @@
-import { transformImage } from "../utils/transformImage";
+import PropTypes from "prop-types";
+// import { transformImage } from "../utils/transformImage";
 
 /**
  * @typedef {Object} AgentType
@@ -40,5 +41,23 @@ function Agent({ agent }) {
     </div>
   );
 }
+
+Agent.propTypes = {
+  agent: PropTypes.shape({
+    abilities: PropTypes.array.isRequired,
+    background: PropTypes.string.isRequired,
+    backgroundGradientColors: PropTypes.array.isRequired,
+    bustPortrait: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    displayIcon: PropTypes.string.isRequired,
+    displayIconSmall: PropTypes.string.isRequired,
+    displayName: PropTypes.string.isRequired,
+    fullPortrait: PropTypes.string.isRequired,
+    fullPortraitV2: PropTypes.string.isRequired,
+    killfeedPortrait: PropTypes.string.isRequired,
+    role: PropTypes.object.isRequired,
+    uuid: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default Agent;
