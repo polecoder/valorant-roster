@@ -17,7 +17,7 @@ function Navbar() {
     <nav className="fixed z-[99] w-full bg-primary-blue">
       <div className="flex justify-between px-4 py-4">
         <div className="flex items-center gap-4">
-          <img src="./img/logo.svg" alt="Valorant Logo" />
+          <img src="./img/logoWhite.svg" alt="Valorant Logo" />
           <span className="font-tungsten text-2xl uppercase tracking-wider text-white">
             Roster
           </span>
