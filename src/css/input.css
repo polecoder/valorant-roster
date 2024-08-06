@@ -20,5 +20,5 @@
 }
 
 .hover-area:hover ~ .hover-text {
-  @apply scale-[85%];
+  @apply scale-[90%];
 }
