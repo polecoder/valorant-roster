@@ -35,7 +35,7 @@ function Agent({ agent }) {
         alt={agent.displayName}
         className="hover-image w-[320px] max-w-fit scale-[115%] transition-transform duration-300 sm:w-[375px]"
       />
-      <h3 className="hover-text absolute bottom-0 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 px-7 text-center text-2xl uppercase text-white transition-transform duration-300 before:absolute before:left-1/2 before:top-[47%] before:z-[-1] before:w-full before:-translate-x-1/2 before:-translate-y-1/2 before:border-[8px] before:border-y-[16px] before:border-solid before:border-primary-red before:border-l-transparent before:border-r-transparent sm:px-9 sm:text-3xl sm:before:top-[51%] sm:before:border-y-[18px]">
+      <h3 className="hover-text absolute bottom-0 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 px-7 text-center text-2xl uppercase text-white transition-transform duration-300 before:absolute before:left-1/2 before:top-[49%] before:z-[-1] before:w-full before:-translate-x-1/2 before:-translate-y-1/2 before:border-[8px] before:border-y-[16px] before:border-solid before:border-primary-red before:border-l-transparent before:border-r-transparent sm:px-9 sm:text-3xl sm:before:top-[51%] sm:before:border-y-[18px]">
         {agent.displayName}
       </h3>
     </div>
