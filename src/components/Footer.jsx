@@ -34,7 +34,7 @@ function Footer() {
           className="group w-fit"
         >
           <img
-            src="./img/githubLogo.svg"
+            src="/img/githubLogo.svg"
             alt="Github logo"
             className="w-7 transition-transform duration-300 group-hover:scale-110"
           />
@@ -45,7 +45,7 @@ function Footer() {
           className="group w-fit"
         >
           <img
-            src="./img/logoBlue.svg"
+            src="/img/logoBlue.svg"
             alt="Valorant logo"
             className="w-7 transition-transform duration-300 group-hover:scale-110"
           />

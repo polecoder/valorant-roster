@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,13 +18,13 @@ function Navbar() {
     <nav className="fixed z-[99] w-full bg-primary-blue">
       <div className="flex justify-between px-4 py-4">
         <div className="flex items-center gap-4">
-          <img src="./img/logoWhite.svg" alt="Valorant Logo" />
+          <img src="/img/logoWhite.svg" alt="Valorant Logo" />
           <span className="font-tungsten text-2xl uppercase tracking-wider text-white">
             Roster
           </span>
         </div>
         <button type="button" onClick={toggleMenu}>
-          <img src="./img/menu.svg" alt="" />
+          <img src="/img/menu.svg" alt="Menu icon" />
         </button>
       </div>
       <ul
@@ -32,12 +33,12 @@ function Navbar() {
         className="flex-col items-center overflow-hidden transition-[max-height] duration-300 ease-in-out"
       >
         <li className="h-full w-full border-t border-light py-2">
-          <a
-            href="#"
+          <Link
+            to="/agents"
             className="block text-center font-tungsten text-lg uppercase tracking-wider text-white"
           >
             Agents
-          </a>
+          </Link>
         </li>
         <li className="h-full w-full border-t border-light py-2">
           <a
