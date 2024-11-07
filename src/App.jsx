@@ -12,8 +12,8 @@ function App() {
         <Navbar />
         <div className="bg-light pt-16 font-tungsten">
           <Routes>
-            <Route path="/agents" element={ <AgentList /> } />
-            <Route path="/agents/:id" element={ <AgentDetails /> } />
+            <Route path="/agents" element={<AgentList />} />
+            <Route path="/agents/:id" element={<AgentDetails />} />
           </Routes>
         </div>
         <Footer />

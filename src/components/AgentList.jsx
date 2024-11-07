@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import Agent from "./Agent";
 
 function AgentList() {
-  const AGENT_URL =
+  const AGENTS_URL =
     "https://valorant-api.com/v1/agents?isPlayableCharacter=true";
   const [agents, setAgents] = useState([]); // Guardo en "agents" solo los datos que necesito
 
   useEffect(() => {
-    fetch(AGENT_URL)
+    fetch(AGENTS_URL)
       .then((response) => response.json())
       .then((data) => {
         const agentsRawData = data.data;
