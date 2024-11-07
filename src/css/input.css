@@ -22,3 +22,11 @@
 .hover-area:hover ~ .hover-text {
   @apply scale-[90%];
 }
+
+.agent_bg-effect {
+  mask-image: radial-gradient(
+    ellipse 50% 55%,
+    rgba(0, 0, 0, 1),
+    transparent 90%
+  );
+}

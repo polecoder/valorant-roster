@@ -34,7 +34,7 @@ function AgentDetails() {
           uuid,
         } = data.data;
 
-        const agent = {
+        const agentData = {
           abilities,
           background,
           backgroundGradientColors,
@@ -49,26 +49,44 @@ function AgentDetails() {
           role,
           uuid,
         };
-        
-        console.log(agent)
-        setAgent(agent);
+        setAgent(agentData);
       });
-  }, [agentUuid])
+  }, [agentUuid]);
 
-  if (agent == null) return (
-    <section>
-      <p>Loading...</p>
-    </section>
-  )
+  if (agent == null)
+    return (
+      <section>
+        <p>Loading...</p>
+      </section>
+    );
+
+  // format the agent background colors properly
+  const colorsArray = agent.backgroundGradientColors.map(
+    (color) => `#${color.slice(0, 6)}`,
+  );
+
+  const agentBackgroundStyle = {
+    backgroundImage: `linear-gradient(to bottom, ${colorsArray[0]}, ${colorsArray[1]}, ${colorsArray[2]}, ${colorsArray[3]})`,
+  };
 
   return (
     <section className="font-lato text-sm">
-      <section className="py-8 px-4 relative overflow-hidden">
+      <section className="relative overflow-hidden px-4 py-8">
         <div className="w-1/2">
-          <h2 className="uppercase text-5xl mb-4 font-tungsten">{agent.displayName}</h2>
+          <h2 className="mb-4 font-tungsten text-5xl uppercase">
+            {agent.displayName}
+          </h2>
           <p>{agent.description}</p>
         </div>
-        <img className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-3/4 w-[300px]" src={agent.fullPortrait} alt="Temp" />
+        <div
+          className="agent_bg-effect absolute left-3/4 top-1/2 h-[250px] w-[200px] -translate-x-1/2 -translate-y-1/2"
+          style={agentBackgroundStyle}
+        ></div>
+        <img
+          className="absolute left-3/4 top-1/2 w-[300px] -translate-x-1/2 -translate-y-1/2"
+          src={agent.fullPortrait}
+          alt={agent.displayName}
+        />
       </section>
     </section>
   );

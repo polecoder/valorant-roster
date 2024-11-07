@@ -623,6 +623,10 @@ video {
   height: 190px;
 }
 
+.h-\[250px\] {
+  height: 250px;
+}
+
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
@@ -650,6 +654,10 @@ video {
 
 .w-\[150px\] {
   width: 150px;
+}
+
+.w-\[200px\] {
+  width: 200px;
 }
 
 .w-\[300px\] {
@@ -901,6 +909,19 @@ video {
   --tw-scale-x: 90%;
   --tw-scale-y: 90%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.agent_bg-effect {
+  -webkit-mask-image: radial-gradient(
+    ellipse 50% 55%,
+    rgba(0, 0, 0, 1),
+    transparent 90%
+  );
+          mask-image: radial-gradient(
+    ellipse 50% 55%,
+    rgba(0, 0, 0, 1),
+    transparent 90%
+  );
 }
 
 .before\:absolute::before {
