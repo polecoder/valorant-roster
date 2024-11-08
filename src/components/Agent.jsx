@@ -30,17 +30,21 @@ function Agent({ agent }) {
     <Link
       key={agent.uuid}
       to={`/agents/${agent.uuid}`}
-      className="relative mx-auto w-fit"
+      className="mx-auto w-fit"
     >
-      <div className="hover-area absolute left-1/2 top-1/2 h-[190px] w-[150px] -translate-x-1/2 -translate-y-1/2 sm:h-[380px] sm:w-[200px]"></div>
-      <img
-        src={agent.fullPortrait}
-        alt={agent.displayName}
-        className="hover-image w-[320px] max-w-fit scale-[115%] transition-transform duration-300 sm:w-[375px]"
-      />
-      <h3 className="hover-text absolute bottom-0 left-1/2 z-10 w-[135px] -translate-x-1/2 -translate-y-1/2 px-7 text-center text-2xl uppercase text-white transition-transform duration-300 before:absolute before:left-1/2 before:top-[49%] before:z-[-1] before:w-full before:-translate-x-1/2 before:-translate-y-1/2 before:border-[8px] before:border-y-[16px] before:border-solid before:border-primary-red before:border-l-transparent before:border-r-transparent sm:px-9 sm:text-3xl sm:before:top-[51%] sm:before:border-y-[18px]">
-        {agent.displayName}
-      </h3>
+      <div className="hover-area relative flex h-[200px] w-[135px] items-start justify-center overflow-hidden bg-primary-blue">
+        <div className="relative">
+          <div className="agent_bg-effect2 absolute left-1/2 top-[40%] h-3/4 w-1/2 -translate-x-1/2 -translate-y-1/2 bg-light"></div>
+          <img
+            src={agent.fullPortrait}
+            alt={agent.displayName}
+            className="hover-image w-[250px] max-w-fit scale-[115%] transition-transform duration-300 sm:w-[375px]"
+          />
+        </div>
+        <h3 className="absolute bottom-0 left-0 z-[1] w-full border-t border-light bg-primary-blue text-center text-xl uppercase text-light">
+          {agent.displayName}
+        </h3>
+      </div>
     </Link>
   );
 }

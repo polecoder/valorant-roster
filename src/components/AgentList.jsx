@@ -55,7 +55,7 @@ function AgentList() {
       <h2 className="pb-4 pt-6 text-center text-5xl uppercase md:text-6xl">
         Agents
       </h2>
-      <div className="mx-auto flex h-fit flex-col gap-y-24 overflow-x-hidden pb-16 pt-8 md:grid md:max-w-fit md:grid-cols-2 md:gap-y-48 md:pb-32 md:pt-12 lg:grid-cols-3">
+      <div className="mx-auto grid h-fit grid-cols-2 gap-y-6 overflow-x-hidden pb-16 pt-8 md:max-w-fit md:gap-y-48 md:pb-32 md:pt-12 lg:grid-cols-3">
         {agents.length > 0 ? (
           agents.map((agent) => <Agent key={agent.uuid} agent={agent} />)
         ) : (
