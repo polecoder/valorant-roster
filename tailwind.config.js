@@ -13,6 +13,9 @@ export default {
         "primary-blue": "#0F1923",
         "primary-red": "#FF4654",
       },
+      screens: {
+        xs: "520px",
+      },
     },
   },
   plugins: [],
