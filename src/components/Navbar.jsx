@@ -3,11 +3,16 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [height, setHeight] = useState(0);
+  const [height, setHeight] = useState("0px");
   const ref = useRef(null);
 
   useEffect(() => {
-    setHeight(isOpen ? ref.current.scrollHeight : 0);
+    if (window.innerWidth < 768) {
+      setHeight(isOpen ? `${ref.current.scrollHeight}px` : "0px");
+    } else {
+      setIsOpen(true);
+      setHeight("auto");
+    }
   }, [isOpen]);
 
   function toggleMenu() {
@@ -15,7 +20,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="fixed z-[99] w-full bg-primary-blue">
+    <nav className="fixed z-[99] w-full bg-primary-blue md:flex md:justify-between">
       <div className="flex justify-between px-4 py-4">
         <div className="flex items-center gap-4">
           <img src="/img/logoWhite.svg" alt="Valorant Logo" />
@@ -23,35 +28,35 @@ function Navbar() {
             Roster
           </span>
         </div>
-        <button type="button" onClick={toggleMenu}>
+        <button className="md:hidden" type="button" onClick={toggleMenu}>
           <img src="/img/menu.svg" alt="Menu icon" />
         </button>
       </div>
       <ul
         ref={ref}
-        style={{ maxHeight: `${height}px` }}
-        className="flex-col items-center overflow-hidden transition-[max-height] duration-300 ease-in-out"
+        style={{ maxHeight: window.innerWidth < 768 ? height : "none" }}
+        className="flex-col items-center overflow-hidden transition-[max-height] duration-300 ease-in-out md:flex md:max-h-full md:flex-row"
       >
-        <li className="h-full w-full border-t border-light py-2">
+        <li className="h-full w-full border-t border-light md:border-none">
           <Link
             to="/agents"
-            className="block text-center font-tungsten text-lg uppercase tracking-wider text-white"
+            className="block py-2 text-center font-tungsten text-lg uppercase tracking-wider text-white md:h-full md:px-4 md:py-0 md:leading-[63px]"
           >
             Agents
           </Link>
         </li>
-        <li className="h-full w-full border-t border-light py-2">
+        <li className="h-full w-full border-t border-light md:border-none">
           <a
             href="#"
-            className="block text-center font-tungsten text-lg uppercase tracking-wider text-white"
+            className="block py-2 text-center font-tungsten text-lg uppercase tracking-wider text-white md:h-full md:px-4 md:py-0 md:leading-[63px]"
           >
             Maps
           </a>
         </li>
-        <li className="h-full w-full border-t border-light py-2">
+        <li className="h-full w-full border-t border-light md:border-none">
           <a
             href="#"
-            className="block text-center font-tungsten text-lg uppercase tracking-wider text-white"
+            className="block py-2 text-center font-tungsten text-lg uppercase tracking-wider text-white md:h-full md:px-4 md:py-0 md:leading-[63px]"
           >
             Weapons
           </a>
