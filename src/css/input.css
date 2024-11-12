@@ -36,3 +36,7 @@
     transparent 85%
   );
 }
+
+.active-link {
+  @apply md:bg-light md:bg-opacity-25 md:text-primary-red;
+}

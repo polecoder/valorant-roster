@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +24,7 @@ function Navbar() {
       <div className="flex justify-between px-4 py-4">
         <div className="flex items-center gap-4">
           <img src="/img/logoWhite.svg" alt="Valorant Logo" />
-          <span className="font-tungsten text-2xl uppercase tracking-wider text-white">
+          <span className="font-tungsten text-2xl uppercase text-white">
             Roster
           </span>
         </div>
@@ -38,28 +38,52 @@ function Navbar() {
         className="flex-col items-center overflow-hidden transition-[max-height] duration-300 ease-in-out md:flex md:max-h-full md:flex-row"
       >
         <li className="h-full w-full border-t border-light md:border-none">
-          <Link
+          <NavLink
             to="/agents"
-            className="block py-2 text-center font-tungsten text-lg uppercase tracking-wider text-white md:h-full md:px-4 md:py-0 md:leading-[63px]"
+            className="block py-2 text-center font-tungsten uppercase text-white md:mx-2 md:flex md:h-full md:items-center md:px-2 md:py-0"
           >
-            Agents
-          </Link>
+            {({ isActive }) => (
+              <span
+                className={`text-lg md:rounded-md md:px-2 md:py-1 md:text-xl md:transition-all md:duration-300 md:hover:bg-light md:hover:bg-opacity-25 md:hover:text-primary-red ${
+                  isActive ? "active-link" : ""
+                }`}
+              >
+                Agents
+              </span>
+            )}
+          </NavLink>
         </li>
         <li className="h-full w-full border-t border-light md:border-none">
-          <a
-            href="#"
-            className="block py-2 text-center font-tungsten text-lg uppercase tracking-wider text-white md:h-full md:px-4 md:py-0 md:leading-[63px]"
+          <NavLink
+            to="/"
+            className="block py-2 text-center font-tungsten uppercase text-white md:mx-2 md:flex md:h-full md:items-center md:px-2 md:py-0"
           >
-            Maps
-          </a>
+            {({ isActive }) => (
+              <span
+                className={`text-lg md:rounded-md md:px-2 md:py-1 md:text-xl md:transition-all md:duration-300 md:hover:bg-light md:hover:bg-opacity-25 md:hover:text-primary-red ${
+                  isActive ? "active-link" : ""
+                }`}
+              >
+                Maps
+              </span>
+            )}
+          </NavLink>
         </li>
         <li className="h-full w-full border-t border-light md:border-none">
-          <a
-            href="#"
-            className="block py-2 text-center font-tungsten text-lg uppercase tracking-wider text-white md:h-full md:px-4 md:py-0 md:leading-[63px]"
+          <NavLink
+            to="/"
+            className="block py-2 text-center font-tungsten uppercase text-white md:mx-2 md:flex md:h-full md:items-center md:px-2 md:py-0"
           >
-            Weapons
-          </a>
+            {({ isActive }) => (
+              <span
+                className={`text-lg md:rounded-md md:px-2 md:py-1 md:text-xl md:transition-all md:duration-300 md:hover:bg-light md:hover:bg-opacity-25 md:hover:text-primary-red ${
+                  isActive ? "active-link" : ""
+                }`}
+              >
+                Weapons
+              </span>
+            )}
+          </NavLink>
         </li>
       </ul>
     </nav>
