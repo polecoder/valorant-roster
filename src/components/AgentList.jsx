@@ -52,18 +52,27 @@ function AgentList() {
 
   return (
     <>
-      <h2 className="xs:text-6xl pb-4 pt-6 text-center text-5xl uppercase">
+      <h2 className="pb-4 pt-6 text-center text-5xl uppercase xs:text-6xl">
         Agents
       </h2>
-      <div className="xs:gap-12 mx-auto grid h-fit max-w-fit grid-cols-2 gap-x-3 gap-y-6 overflow-x-hidden pb-16 pt-4 md:grid-cols-3 lg:grid-cols-3">
-        {agents.length > 0 ? (
-          agents.map((agent) => <Agent key={agent.uuid} agent={agent} />)
-        ) : (
-          <p className="text-center font-lato text-xl text-primary-red md:text-2xl">
-            Loading...
+      {agents.length > 0 ? (
+        <div className="mx-auto grid h-fit max-w-fit grid-cols-2 gap-x-3 gap-y-6 overflow-x-hidden pb-16 pt-4 xs:gap-12 md:grid-cols-3 lg:grid-cols-3">
+          {agents.map((agent) => (
+            <Agent key={agent.uuid} agent={agent} />
+          ))}
+        </div>
+      ) : (
+        <div className="p-4 pb-8">
+          <p className="pb-8 text-center font-lato text-xl">
+            We're loading the playable agents for you. Hold tight!
           </p>
-        )}
-      </div>
+          <img
+            src="/img/loading.svg"
+            alt="Loading"
+            className="mx-auto h-12 w-12"
+          />
+        </div>
+      )}
     </>
   );
 }
