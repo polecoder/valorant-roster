@@ -9,14 +9,16 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar />
-        <div className="bg-light pt-16 font-tungsten">
-          <Routes>
-            <Route path="/agents" element={<AgentList />} />
-            <Route path="/agents/:id" element={<AgentDetails />} />
-          </Routes>
+        <div className="flex min-h-screen flex-col">
+          <Navbar />
+          <main className="flex flex-grow flex-col justify-center bg-light pt-16 font-tungsten">
+            <Routes>
+              <Route path="/agents" element={<AgentList />} />
+              <Route path="/agents/:id" element={<AgentDetails />} />
+            </Routes>
+          </main>
+          <Footer />
         </div>
-        <Footer />
       </Router>
     </>
   );
