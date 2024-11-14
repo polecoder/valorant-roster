@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AgentList from "./components/AgentList";
+import Agents from "./pages/Agents";
 import AgentDetails from "./components/AgentDetails";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -13,7 +13,7 @@ function App() {
           <Navbar />
           <main className="flex flex-grow flex-col justify-center bg-light pt-16 font-tungsten">
             <Routes>
-              <Route path="/agents" element={<AgentList />} />
+              <Route path="/agents" element={<Agents />} />
               <Route path="/agents/:id" element={<AgentDetails />} />
             </Routes>
           </main>

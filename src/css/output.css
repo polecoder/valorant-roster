@@ -607,6 +607,10 @@ video {
   margin-bottom: 1rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .mb-\[2px\] {
   margin-bottom: 2px;
 }
@@ -668,6 +672,10 @@ video {
   width: 3rem;
 }
 
+.w-2\/3 {
+  width: 66.666667%;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -692,6 +700,10 @@ video {
   width: 300px;
 }
 
+.w-\[95\%\] {
+  width: 95%;
+}
+
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
@@ -699,6 +711,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.max-w-\[420px\] {
+  max-width: 420px;
 }
 
 .max-w-fit {
@@ -746,10 +762,6 @@ video {
   align-items: center;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .justify-center {
   justify-content: center;
 }
@@ -779,6 +791,14 @@ video {
   overflow-x: hidden;
 }
 
+.border {
+  border-width: 1px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
+}
+
 .border-t {
   border-top-width: 1px;
 }
@@ -793,6 +813,11 @@ video {
   border-color: rgb(15 25 35 / var(--tw-border-opacity));
 }
 
+.border-primary-red {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 70 84 / var(--tw-border-opacity));
+}
+
 .bg-light {
   --tw-bg-opacity: 1;
   background-color: rgb(238 238 238 / var(--tw-bg-opacity));
@@ -803,13 +828,26 @@ video {
   background-color: rgb(15 25 35 / var(--tw-bg-opacity));
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
 .p-4 {
   padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .py-2 {
@@ -827,24 +865,29 @@ video {
   padding-bottom: 2rem;
 }
 
-.pb-16 {
-  padding-bottom: 4rem;
-}
-
-.pb-4 {
-  padding-bottom: 1rem;
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .pb-8 {
   padding-bottom: 2rem;
 }
 
+.pt-1 {
+  padding-top: 0.25rem;
+}
+
 .pt-16 {
   padding-top: 4rem;
 }
 
-.pt-4 {
-  padding-top: 1rem;
+.pt-8 {
+  padding-top: 2rem;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
 }
 
 .pt-6 {
@@ -890,6 +933,18 @@ video {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.leading-4 {
+  line-height: 1rem;
+}
+
+.leading-5 {
+  line-height: 1.25rem;
+}
+
+.leading-3 {
+  line-height: .75rem;
 }
 
 .text-light {
@@ -1004,6 +1059,15 @@ video {
 }
 
 @media (min-width: 520px) {
+  .xs\:my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .xs\:flex {
+    display: flex;
+  }
+
   .xs\:h-\[275px\] {
     height: 275px;
   }
@@ -1016,13 +1080,34 @@ video {
     width: 350px;
   }
 
+  .xs\:w-auto {
+    width: auto;
+  }
+
   .xs\:gap-12 {
     gap: 3rem;
+  }
+
+  .xs\:gap-4 {
+    gap: 1rem;
   }
 
   .xs\:py-\[2px\] {
     padding-top: 2px;
     padding-bottom: 2px;
+  }
+
+  .xs\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .xs\:pt-8 {
+    padding-top: 2rem;
+  }
+
+  .xs\:text-left {
+    text-align: left;
   }
 
   .xs\:text-3xl {
@@ -1033,6 +1118,26 @@ video {
   .xs\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
+  }
+
+  .xs\:leading-3 {
+    line-height: .75rem;
+  }
+
+  .xs\:leading-4 {
+    line-height: 1rem;
+  }
+
+  .xs\:leading-5 {
+    line-height: 1.25rem;
+  }
+
+  .xs\:leading-7 {
+    line-height: 1.75rem;
+  }
+
+  .xs\:leading-6 {
+    line-height: 1.5rem;
   }
 }
 
@@ -1050,12 +1155,12 @@ video {
     display: none;
   }
 
-  .md\:h-full {
-    height: 100%;
-  }
-
   .md\:h-16 {
     height: 4rem;
+  }
+
+  .md\:h-full {
+    height: 100%;
   }
 
   .md\:max-h-full {
@@ -1064,6 +1169,10 @@ video {
 
   .md\:w-16 {
     width: 4rem;
+  }
+
+  .md\:max-w-\[654px\] {
+    max-width: 654px;
   }
 
   .md\:grid-cols-3 {
@@ -1105,18 +1214,32 @@ video {
     padding-bottom: 0.25rem;
   }
 
+  .md\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
   .md\:pb-10 {
     padding-bottom: 2.5rem;
   }
 
-  .md\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+  .md\:pt-10 {
+    padding-top: 2.5rem;
   }
 
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 
   .md\:transition-all {
@@ -1145,8 +1268,8 @@ video {
 }
 
 @media (min-width: 1024px) {
-  .lg\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .lg\:max-w-\[888px\] {
+    max-width: 888px;
   }
 
   .lg\:grid-cols-4 {
