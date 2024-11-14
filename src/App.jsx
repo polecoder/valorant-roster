@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Agents from "./pages/Agents";
-import AgentDetails from "./components/AgentDetails";
+import AgentDetails from "./pages/AgentDetails";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./css/output.css";

@@ -12,6 +12,7 @@ function AgentDetails() {
   const agentUuid = useParams().id;
 
   const [agent, setAgent] = useState(null);
+  const [activeAbility, setActiveAbility] = useState(null);
 
   useEffect(() => {
     const AGENT_URL = `https://valorant-api.com/v1/agents/${agentUuid}`;
@@ -50,6 +51,7 @@ function AgentDetails() {
           uuid,
         };
         setAgent(agentData);
+        setActiveAbility(agentData.abilities[0]);
       });
   }, [agentUuid]);
 
@@ -69,6 +71,10 @@ function AgentDetails() {
     backgroundImage: `linear-gradient(to bottom, ${colorsArray[0]}, ${colorsArray[1]}, ${colorsArray[2]}, ${colorsArray[3]})`,
   };
 
+  function handleAbilityClick(ability) {
+    setActiveAbility(ability);
+  }
+
   return (
     <section className="font-lato text-sm">
       <section className="relative overflow-hidden px-4 py-8">
@@ -87,6 +93,45 @@ function AgentDetails() {
           src={agent.fullPortrait}
           alt={agent.displayName}
         />
+      </section>
+      <section className="bg-primary-blue px-4 py-8 text-light">
+        <h3 className="text-center font-tungsten text-5xl uppercase">
+          Special abilities
+        </h3>
+        <div className="relative z-[1] flex justify-between px-2 py-8">
+          {agent.abilities.map((ability, index) => (
+            <button
+              type="button"
+              key={index}
+              onClick={() => handleAbilityClick(ability)}
+            >
+              <img
+                src={ability.displayIcon}
+                alt={ability.displayName}
+                className={`h-12 w-12 cursor-pointer transition-all duration-300 hover:scale-110 ${
+                  activeAbility?.displayName === ability.displayName
+                    ? "opacity-100" // style for selected ability
+                    : "opacity-50" // style for unselected ability
+                }`}
+              />
+            </button>
+          ))}
+        </div>
+        <div className="relative z-[1]">
+          <h4 className="text-center font-tungsten text-3xl uppercase">
+            {activeAbility.displayName}
+          </h4>
+          <div className="relative">
+            <img
+              src={agent.role.displayIcon}
+              alt={agent.role.displayName}
+              className="absolute left-1/2 top-1/2 z-[0] w-[225px] -translate-x-1/2 -translate-y-1/2 opacity-10"
+            />
+            <p className="relative z-[1] px-2 pt-4 text-sm">
+              {activeAbility.description}
+            </p>
+          </div>
+        </div>
       </section>
     </section>
   );
