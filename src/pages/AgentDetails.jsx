@@ -50,6 +50,7 @@ function AgentDetails() {
           role,
           uuid,
         };
+        console.log(agentData);
         setAgent(agentData);
         setActiveAbility(agentData.abilities[0]);
       });
@@ -99,7 +100,7 @@ function AgentDetails() {
           Special abilities
         </h3>
         <div className="relative z-[1] flex justify-between px-2 py-8">
-          {agent.abilities.map((ability, index) => (
+          {agent.abilities.slice(0, 4).map((ability, index) => (
             <button
               type="button"
               key={index}
@@ -125,12 +126,32 @@ function AgentDetails() {
             <img
               src={agent.role.displayIcon}
               alt={agent.role.displayName}
-              className="absolute left-1/2 top-1/2 z-[0] w-[225px] -translate-x-1/2 -translate-y-1/2 opacity-10"
+              className="absolute left-1/2 top-1/2 z-[0] w-[275px] -translate-x-1/2 -translate-y-1/2 opacity-10"
             />
-            <p className="relative z-[1] px-2 pt-4 text-sm">
-              {activeAbility.description}
-            </p>
+            <div className="flex h-[275px] items-center px-2 pt-4">
+              <p className="relative z-[1] text-sm">
+                {activeAbility.description}
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
+      <section className="px-4 py-8 text-primary-blue">
+        <h3 className="text-center font-tungsten text-5xl uppercase text-primary-red">
+          Role
+        </h3>
+        <div className="flex items-center justify-between py-4">
+          <div className="relative h-[64px] w-[64px] bg-primary-blue p-1 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:scale-[112%] before:border before:border-primary-red">
+            <img
+              className="mx-auto my-1 h-8 w-8"
+              src={agent.role.displayIcon}
+              alt={agent.role.displayName}
+            />
+            <h4 className="text-center font-tungsten uppercase text-light">
+              {agent.role.displayName}
+            </h4>
+          </div>
+          <p className="w-2/3 text-sm">{agent.role.description}</p>
         </div>
       </section>
     </section>
