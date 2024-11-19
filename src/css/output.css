@@ -750,6 +750,14 @@ video {
   width: 100%;
 }
 
+.w-\[150px\] {
+  width: 150px;
+}
+
+.w-\[140px\] {
+  width: 140px;
+}
+
 .max-w-\[200px\] {
   max-width: 200px;
 }
@@ -1239,6 +1247,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:left-\[80\%\] {
+    left: 80%;
+  }
+
   .md\:mx-2 {
     margin-left: 0.5rem;
     margin-right: 0.5rem;

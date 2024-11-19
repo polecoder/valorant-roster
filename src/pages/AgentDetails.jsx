@@ -78,18 +78,18 @@ function AgentDetails() {
   return (
     <section className="font-lato text-sm">
       <section className="relative mx-auto flex max-w-[500px] items-center overflow-hidden px-4 py-8 xs:h-[325px] xs:px-8 md:h-[350px] md:max-w-[675px]">
-        <div className="w-[175px] md:w-[200px]">
+        <div className="w-[150px] md:w-[200px]">
           <h2 className="mb-4 font-tungsten text-5xl uppercase md:text-6xl">
             {agent.displayName}
           </h2>
           <p className="md:text-base">{agent.description}</p>
         </div>
         <div
-          className="agent_bg-effect absolute left-[80%] top-1/2 h-[250px] w-[200px] -translate-x-1/2 -translate-y-1/2 md:h-[300px] md:w-[250px]"
+          className="agent_bg-effect absolute left-3/4 top-1/2 h-[250px] w-[200px] -translate-x-1/2 -translate-y-1/2 md:left-[80%] md:h-[300px] md:w-[250px]"
           style={agentBackgroundStyle}
         ></div>
         <img
-          className="absolute left-[80%] top-1/2 w-[300px] -translate-x-1/2 -translate-y-1/2 md:w-[350px]"
+          className="absolute left-3/4 top-1/2 w-[300px] -translate-x-1/2 -translate-y-1/2 md:left-[80%] md:w-[350px]"
           src={agent.fullPortrait}
           alt={agent.displayName}
         />
@@ -98,7 +98,7 @@ function AgentDetails() {
         <h3 className="text-center font-tungsten text-5xl uppercase">
           Special abilities
         </h3>
-        <div className="md:flex md:justify-center md:gap-8 md:p-8 md:max-w-[675px] md:mx-auto">
+        <div className="md:mx-auto md:flex md:max-w-[675px] md:justify-center md:gap-8 md:p-8">
           <div className="relative z-[1] mx-auto flex max-w-[500px] justify-between px-2 py-8 xs:px-8 md:my-auto md:h-fit md:w-[55%] md:gap-4 md:p-0">
             {agent.abilities.slice(0, 4).map((ability, index) => (
               <button
@@ -141,7 +141,7 @@ function AgentDetails() {
         <h3 className="text-center font-tungsten text-5xl uppercase text-primary-red">
           Role
         </h3>
-        <div className="flex items-center justify-center gap-8 py-4 md:py-8 md:gap-12">
+        <div className="flex items-center justify-center gap-8 py-4 md:gap-12 md:py-8">
           <p className="w-2/3 max-w-[200px] text-sm md:text-base">
             {agent.role.description}
           </p>
