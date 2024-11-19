@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Loading from "../components/Loading";
 
 /**
  * Agent component for the List Display.
@@ -8,65 +9,34 @@ import { useParams } from "react-router-dom";
  * @param {AgentType} props.agent
  * @returns {JSX.Element}
  */
-function AgentDetails() {
-  const agentUuid = useParams().id;
-
-  const [agent, setAgent] = useState(null);
+function AgentDetails({ agents = [] }) {
   const [activeAbility, setActiveAbility] = useState(null);
 
+  const agentUuid = useParams().id;
+  const agent = agents.find((agent) => agent.uuid === agentUuid);
+
   useEffect(() => {
-    const AGENT_URL = `https://valorant-api.com/v1/agents/${agentUuid}`;
-    fetch(AGENT_URL)
-      .then((response) => response.json())
-      .then((data) => {
-        const {
-          abilities,
-          background,
-          backgroundGradientColors,
-          bustPortrait,
-          description,
-          displayIcon,
-          displayIconSmall,
-          displayName,
-          fullPortrait,
-          fullPortraitV2,
-          killfeedPortrait,
-          role,
-          uuid,
-        } = data.data;
+    if (agent) {
+      setActiveAbility(agent.abilities[0]);
+    }
+  }, [agent]);
 
-        const agentData = {
-          abilities,
-          background,
-          backgroundGradientColors,
-          bustPortrait,
-          description,
-          displayIcon,
-          displayIconSmall,
-          displayName,
-          fullPortrait,
-          fullPortraitV2,
-          killfeedPortrait,
-          role,
-          uuid,
-        };
-        setAgent(agentData);
-        setActiveAbility(agentData.abilities[0]);
-      });
-  }, [agentUuid]);
-
+  // show loading component if the agent is not loaded yet
   if (agent == null)
-    return (
-      <section>
-        <p>Loading...</p>
-      </section>
-    );
+    return <Loading text="We're loading the agent for you. Hold tight!" />;
 
-  // format the agent background colors properly
+  // find similar agents
+  const similarAgents = agents.filter(
+    (similarAgent) =>
+      similarAgent.role.displayName === agent.role.displayName &&
+      similarAgent.uuid !== agentUuid,
+  );
+  console.log(similarAgents);
+
+  // format the agent background colors properly and create the gradient
   const colorsArray = agent.backgroundGradientColors.map(
     (color) => `#${color.slice(0, 6)}`,
   );
-
   const agentBackgroundStyle = {
     backgroundImage: `linear-gradient(to bottom, ${colorsArray[0]}, ${colorsArray[1]}, ${colorsArray[2]}, ${colorsArray[3]})`,
   };
@@ -120,7 +90,7 @@ function AgentDetails() {
           </div>
           <div className="relative z-[1]">
             <h4 className="text-center font-tungsten text-3xl uppercase">
-              {activeAbility.displayName}
+              {activeAbility?.displayName || "No active ability"}
             </h4>
             <div className="relative">
               <img
@@ -130,7 +100,8 @@ function AgentDetails() {
               />
               <div className="flex h-[275px] items-center px-2 pt-4 xs:h-[225px]">
                 <p className="relative z-[1] mx-auto max-w-[335px] text-sm">
-                  {activeAbility.description}
+                  {activeAbility?.description ||
+                    "There's no active ability to show a description"}
                 </p>
               </div>
             </div>
@@ -155,6 +126,10 @@ function AgentDetails() {
               {agent.role.displayName}
             </h4>
           </div>
+        </div>
+        <div>
+          <h4 className="uppercase">Similar agents</h4>
+          <div></div>
         </div>
       </section>
     </section>

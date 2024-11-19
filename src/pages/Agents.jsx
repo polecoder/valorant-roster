@@ -1,6 +1,6 @@
 import AgentList from "../components/AgentList";
 
-function Agents() {
+function Agents({ agents }) {
   return (
     <>
       <h2 className="pt-6 text-center text-xl uppercase leading-4 xs:pt-8 xs:text-3xl xs:leading-6 md:pt-10">
@@ -9,7 +9,7 @@ function Agents() {
           Agents
         </span>
       </h2>
-      <AgentList />
+      <AgentList agents={agents} />
     </>
   );
 }
