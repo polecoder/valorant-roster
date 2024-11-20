@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function AgentDetailsRole({ agent, similarAgents }) {
   return (
     <section className="px-4 py-8 text-primary-blue xs:px-8">
-      <h3 className="text-center font-tungsten text-5xl uppercase text-primary-red">
+      <h3 className="text-center font-tungsten text-5xl uppercase text-primary-blue">
         Role
       </h3>
       <div className="flex items-center justify-center gap-8 py-4 md:gap-12 md:py-8">
@@ -22,7 +22,7 @@ function AgentDetailsRole({ agent, similarAgents }) {
         </div>
       </div>
       <div className="py-4">
-        <h4 className="text-center font-tungsten text-3xl uppercase italic text-primary-red">
+        <h4 className="text-center font-tungsten text-3xl uppercase italic text-primary-blue">
           Similar agents
         </h4>
         <div className="mx-auto grid w-fit grid-cols-3 gap-6 px-2 pt-4">
