@@ -1234,6 +1234,10 @@ video {
     width: 350px;
   }
 
+  .xs\:max-w-\[500px\] {
+    max-width: 500px;
+  }
+
   .xs\:gap-12 {
     gap: 3rem;
   }

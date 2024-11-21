@@ -17,7 +17,7 @@ function AgentDetailsAbilities({ agent }) {
       <h3 className="text-center font-tungsten text-5xl uppercase">
         Special abilities
       </h3>
-      <div className="md:mx-auto md:flex md:max-w-[675px] md:justify-center md:gap-8 md:p-8">
+      <div className="md:mx-auto md:flex md:justify-center md:gap-8 md:p-8">
         <div className="relative z-[1] mx-auto flex max-w-[500px] justify-between px-2 py-8 xs:px-8 md:my-auto md:h-fit md:w-[55%] md:gap-4 md:p-0">
           {agent.abilities.slice(0, 4).map((ability, index) => (
             <button
@@ -48,7 +48,7 @@ function AgentDetailsAbilities({ agent }) {
               className="absolute left-1/2 top-1/2 z-[0] w-[275px] -translate-x-1/2 -translate-y-1/2 opacity-10"
             />
             <div className="flex h-[275px] items-center px-2 pt-4 xs:h-[225px]">
-              <p className="relative z-[1] mx-auto max-w-[335px] text-sm">
+              <p className="relative z-[1] mx-auto text-sm xs:max-w-[500px] xs:px-8 md:p-0">
                 {activeAbility?.description ||
                   "There's no active ability to show a description"}
               </p>
