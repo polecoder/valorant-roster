@@ -14,12 +14,12 @@ function AgentDetailsAbilities({ agent }) {
 
   return (
     <section className="bg-primary-blue text-light">
-      <section className="mx-auto max-w-[400px] px-4 py-8 xs:max-w-[500px] xs:px-8">
+      <section className="mx-auto max-w-[400px] px-4 py-8 xs:max-w-[500px] xs:px-8 md:max-w-[1000px]">
         <h3 className="text-center font-tungsten text-5xl uppercase">
           Special abilities
         </h3>
-        <div className="md:mx-auto md:flex md:justify-center md:gap-8 md:p-8">
-          <div className="relative z-[1] mx-auto flex justify-between px-2 py-8 xs:px-8 md:my-auto md:h-fit md:w-[55%] md:gap-4 md:p-0">
+        <div className="md:mx-auto md:flex md:justify-between md:gap-8 md:p-8">
+          <div className="relative z-[1] mx-auto flex justify-between px-2 py-8 xs:px-8 md:mx-0 md:my-auto md:h-fit md:w-1/2 md:max-w-[325px] md:gap-4 md:p-0">
             {agent.abilities.slice(0, 4).map((ability, index) => (
               <button
                 type="button"
@@ -38,7 +38,7 @@ function AgentDetailsAbilities({ agent }) {
               </button>
             ))}
           </div>
-          <div className="relative z-[1]">
+          <div className="relative z-[1] md:w-1/2">
             <h4 className="text-center font-tungsten text-3xl uppercase italic">
               {activeAbility?.displayName || "No active ability"}
             </h4>
