@@ -8,7 +8,7 @@ function AgentDetailsHero({ agent }) {
   };
 
   return (
-    <section className="relative mx-auto flex max-w-[500px] items-center overflow-hidden px-4 py-8 xs:h-[350px] xs:px-8 md:h-[400px] md:max-w-[1000px] lg:h-[450px] lg:px-12">
+    <section className="relative mx-auto flex max-w-[400px] items-center overflow-hidden px-4 py-8 xs:h-[350px] xs:max-w-[500px] xs:px-8 md:h-[400px] md:max-w-[1000px] lg:h-[450px] lg:px-12">
       <div className="w-[150px] xs:w-[200px] md:w-[350px] lg:w-[450px]">
         <h2 className="mb-4 font-tungsten text-5xl uppercase md:text-6xl">
           {agent.displayName}

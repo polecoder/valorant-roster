@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 function AgentDetailsRole({ agent, similarAgents }) {
   return (
-    <section className="px-4 py-8 text-primary-blue xs:px-8">
+    <section className="mx-auto max-w-[400px] px-4 py-8 text-primary-blue xs:max-w-[500px] xs:px-8">
       <h3 className="text-center font-tungsten text-5xl uppercase text-primary-blue">
         Role
       </h3>
-      <div className="flex items-center justify-center gap-8 py-4 md:gap-12 md:py-8">
-        <p className="w-2/3 max-w-[200px] text-sm md:text-base">
+      <div className="flex items-center justify-between gap-8 pb-6 pt-4 xs:px-8 md:gap-12">
+        <p className="w-2/3 max-w-[250px] text-sm md:text-base">
           {agent.role.description}
         </p>
         <div className="relative flex h-16 w-16 flex-col justify-center bg-primary-blue p-1 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:scale-[112%] before:border before:border-primary-red xs:h-24 xs:w-24">
@@ -21,11 +21,19 @@ function AgentDetailsRole({ agent, similarAgents }) {
           </h4>
         </div>
       </div>
-      <div className="py-4">
+      <div className="py-4 xs:px-8">
         <h4 className="text-center font-tungsten text-3xl uppercase italic text-primary-blue">
           Similar agents
         </h4>
-        <div className="mx-auto grid w-fit grid-cols-3 gap-6 px-2 pt-4">
+        <p className="pt-4">
+          Unleash your full potential! Discover other{" "}
+          <span className="font-bold uppercase text-primary-red">
+            {agent.role.displayName}
+          </span>{" "}
+          agents, each with their own unique abilities to shift the tide of
+          battle.
+        </p>
+        <div className="mx-auto grid w-fit grid-cols-3 gap-6 pt-6 xs:flex xs:w-auto xs:justify-between">
           {similarAgents.map((agent) => (
             <Link
               key={agent.uuid}
